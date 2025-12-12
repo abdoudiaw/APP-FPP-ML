@@ -1,0 +1,24 @@
+{
+  "model": {
+    "n_channels": 1,
+    "n_classes": 1,
+    "bilinear": true,
+    "base_channels": 64
+  },
+  "training": {
+    "batch_size": 4,
+    "learning_rate": 0.0001,
+    "epochs": 100,
+    "train_split": 0.8
+  },
+  "data": {
+    "data_path": "data/solps_2d_data.npy",
+    "file_format": "npy",
+    "normalize": true,
+    "image_size": [256, 256]
+  },
+  "checkpoint": {
+    "checkpoint_dir": "checkpoints/unet_2d",
+    "save_frequency": 10
+  }
+}
