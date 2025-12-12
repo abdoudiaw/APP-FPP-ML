@@ -1,6 +1,6 @@
 import torch
 import sys
-sys.path.append("../NN")
+sys.path.append("../nn")
 from nn_learner import retrain
 
 # Load in dataset

@@ -1,6 +1,6 @@
 import torch
 import sys
-sys.path.append("../NN")
+sys.path.append("../nn")
 from nn_learner import LearnerModel, getAllGNDData, SOLVER_INDEXES
 import plotter
 import collections
