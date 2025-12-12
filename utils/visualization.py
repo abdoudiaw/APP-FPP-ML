@@ -93,7 +93,7 @@ def plot_2d_data(data, title='2D Data', cmap='viridis',
     plt.show()
 
 
-def plot_training_history(history, metrics=['loss'], save_path=None, 
+def plot_training_history(history, metrics=None, save_path=None, 
                           figsize=(12, 6)):
     """
     Plot training history metrics.
@@ -105,6 +105,9 @@ def plot_training_history(history, metrics=['loss'], save_path=None,
         save_path (str, optional): Path to save the figure
         figsize (tuple): Figure size
     """
+    if metrics is None:
+        metrics = ['loss']
+    
     n_metrics = len(metrics)
     fig, axes = plt.subplots(1, n_metrics, figsize=figsize)
     

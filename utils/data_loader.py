@@ -4,7 +4,7 @@ Data loading utilities for radial and 2D SOLPS data.
 
 import numpy as np
 import torch
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset, DataLoader, random_split
 import h5py
 import os
 
@@ -224,9 +224,7 @@ def create_data_loaders(dataset, batch_size=32, train_split=0.8, shuffle=True):
     n_train = int(n_samples * train_split)
     n_val = n_samples - n_train
     
-    train_dataset, val_dataset = torch.utils.data.random_split(
-        dataset, [n_train, n_val]
-    )
+    train_dataset, val_dataset = random_split(dataset, [n_train, n_val])
     
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=shuffle)
     val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)

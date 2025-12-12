@@ -21,9 +21,12 @@ class RadialNN(nn.Module):
         dropout_rate (float): Dropout rate for regularization
     """
     
-    def __init__(self, input_size=64, hidden_sizes=[128, 256, 128], 
+    def __init__(self, input_size=64, hidden_sizes=None, 
                  output_size=64, dropout_rate=0.2):
         super(RadialNN, self).__init__()
+        
+        if hidden_sizes is None:
+            hidden_sizes = [128, 256, 128]
         
         self.input_size = input_size
         self.hidden_sizes = hidden_sizes
